@@ -39,12 +39,15 @@ class modeloCNN():
         print("Red Neuronal Cargada desde Archivo") 
         return model
 
-    def predecir(self, image_path='apiCNN/Logica/Imagenes/imagen1.png'):
+    def predecir(self, image_id):
 
         print('CARGANDO MODELO...')
         label_names = ['buildings', 'forest', 'glacier', 'mountain', 'sea', 'street']
         nombreArchivoModelo=r'apiCNN/Logica/arquitectura_optimizada'
         nombreArchivoPesos=r'apiCNN/Logica/pesos_optimizados'
+
+        dbReg=models.Image.objects.get(id=image_id)
+        image_path = str(dbReg.image)
 
         model=self.cargarRNN(nombreArchivoModelo,nombreArchivoPesos) 
         model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['acc'])
@@ -70,26 +73,9 @@ class modeloCNN():
         print(label_names)
         print('Etiqueta predicción: ', label_names[index_sample_label])
         
+        dbReg.label = label_names[index_sample_label]
+        dbReg.probability = maxElement
+        dbReg.save()
+
         #plt.imshow(img)
-
-    def display_stats(folder_path, sample_id=5):
-        """
-        Mostrar las caractiristicas de las imagenes
-        """
-        features, labels = create_dataset(r'Intel_Images\seg_train\seg_train')
-        print('Formas de la matriz: {}'.format(np.array(features).shape))
-        print('Samples (cantidad de imágenes): {}'.format(len(features)))
-        print('Cantidad de Etiquetas: {}'.format(dict(zip(*np.unique(labels, return_counts=True)))))
-        print('Primeras 20 Etiquetas: {}'.format(labels[:20]))
-
-        sample_image = features[sample_id]
-        sample_label = labels[sample_id]
-        label_names = _load_label_names()
-
-        print('\nImagen {}:'.format(sample_id))
-        print('Imagen - Valor Min: {} Valor Max: {}'.format(sample_image.min(), sample_image.max()))
-        print('Imagen - Shape: {}'.format(sample_image.shape))
-        print('Etiqueta - Etiqueta Id: {} Nombre: {}'.format(sample_label, label_names[sample_label]))
-        plt.axis('off')
-        plt.imshow(sample_image)
             

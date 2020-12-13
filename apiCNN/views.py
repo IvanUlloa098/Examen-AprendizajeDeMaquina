@@ -88,6 +88,6 @@ class Clasificacion():
         
         print("Ingresando")
         #resul=modeloSNN.modeloSNN.suma(num1,num2)
-        resul=modeloCNN.modeloCNN.predecir(modeloCNN.modeloCNN,"apiCNN/Logica/Imagenes/mountain.png")
+        resul=modeloCNN.modeloCNN.predecir(modeloCNN.modeloCNN, 1)
         print("Enviado")
         #return render(request, "welcome.html",{"e":resul})
