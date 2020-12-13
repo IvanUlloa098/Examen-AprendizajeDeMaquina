@@ -80,7 +80,7 @@ class Clasificacion():
     #imagen = models.ImageField(upload_to='imagenes')
     #prediccion = models.CharField(max_length=200, blank=True)
 
-    def determinarSobrevivencia(request):
+    def determinarImagen(request):
 
         return render(request, "seleccion.html")
 

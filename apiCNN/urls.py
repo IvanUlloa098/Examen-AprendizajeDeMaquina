@@ -9,7 +9,7 @@ urlpatterns = [
     path('libros/<int:pk>/', views.DetailLibro.as_view()),
     path('personas/', views.ListPersona.as_view()),
     path('personas/<int:pk>/', views.DetailPersona.as_view()),
-    url(r'^sobrevivencia/$',views.Clasificacion.determinarSobrevivencia),
+    url(r'^imagen/$',views.Clasificacion.determinarImagen),
     url(r'^predecir/',views.Clasificacion.predecir),
     url(r'^$',views.Autenticacion.singIn),
     #url(r'^postsign/',views.Autenticacion.postsign),

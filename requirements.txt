@@ -11,3 +11,5 @@ pillow
 polls
 markdown
 django-filter
+opencv-python
+pyrebase4
