@@ -82,12 +82,12 @@ class Clasificacion():
 
     def determinarSobrevivencia(request):
 
-        return render(request, "sobrevivencia.html")
+        return render(request, "seleccion.html")
 
     def predecir(request):
         
         print("Ingresando")
         #resul=modeloSNN.modeloSNN.suma(num1,num2)
-        resul=modeloCNN.modeloCNN.predecir(modeloCNN.modeloCNN, 1)
+        resul=modeloCNN.modeloCNN.predecir(modeloCNN.modeloCNN, request.POST.get("Imagen"))
         print("Enviado")
-        #return render(request, "welcome.html",{"e":resul})
+        return render(request, "prediccion.html",{"e":resul})

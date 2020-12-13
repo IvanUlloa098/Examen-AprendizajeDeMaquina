@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClasificadorSNN</title>
+    <style type="text/css">
+    * {
+      font-family: 'Lato', sans-serif;  
+    }
+    img {
+        float: left;
+        width: 30%;
+        padding: 1% 0% 1%;
+        margin: 0%;
+        border-radius: 1%;
+        border-width: 1%;
+    }
+    h2,p {
+        float: left;
+        width: 65%;
+        padding: 1% 0% 1%;
+        margin: 0%;
+        
+    }    
+    body {
+  background-image: url("https://images.unsplash.com/photo-1496167117681-944f702be1f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+{% csrf_token %}
+<h1>Visualizacion de Resultado</h1>
+<img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/{{e.url}}" alt="Imagen" />
+<h2>Prediccion</h2>
+<p>{{e.pred}}</p>
+<h2>Probabilidad</h2>
+<p>{{e.prob}}</p>
+</body>
+</html>

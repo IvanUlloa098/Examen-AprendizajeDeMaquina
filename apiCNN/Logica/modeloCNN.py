@@ -76,6 +76,11 @@ class modeloCNN():
         dbReg.label = label_names[index_sample_label]
         dbReg.probability = maxElement
         dbReg.save()
+        datos = dict()    
+        datos['pred'] = label_names[index_sample_label]
+        datos['prob'] = str(round(maxElement*100, 4))+'%'
+        datos['url']= image_path    
+        return datos
 
         #plt.imshow(img)
             

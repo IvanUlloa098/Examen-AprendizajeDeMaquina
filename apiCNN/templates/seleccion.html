@@ -1,0 +1,219 @@
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleccionar Imagen</title>
+    <style type="text/css">
+    * {
+      font-family: 'Lato', sans-serif;  
+}
+h1 {
+  text-align: center;
+  
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1496167117681-944f702be1f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+}
+form {
+  height: calc( 300px + 3em);
+  width: 720px;
+  margin:1em auto;
+  position: relative;    
+}
+
+form img {
+  position: absolute;
+  top: 0;
+  left: 226px;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+form input[type=radio] {
+  position: relative;
+  bottom: calc(-300px - 1.5em);
+  left: .5em;
+}
+form input[type=submit] {
+  position: relative;
+  display: inline-block;
+  bottom: calc(-300px - 1.5em);
+  width: inherit;
+  padding: 10px;
+}
+form input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
+  opacity: 1;
+}
+
+form input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+  opacity: 1;
+}
+
+form input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+  opacity: 1;
+}
+
+form input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(6):checked ~ img:nth-of-type(6) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(7):checked ~ img:nth-of-type(7) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(8):checked ~ img:nth-of-type(8) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(9):checked ~ img:nth-of-type(9) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(10):checked ~ img:nth-of-type(10) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(11):checked ~ img:nth-of-type(11) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(12):checked ~ img:nth-of-type(12) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(13):checked ~ img:nth-of-type(13) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(14):checked ~ img:nth-of-type(14) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(15):checked ~ img:nth-of-type(15) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(16):checked ~ img:nth-of-type(16) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(17):checked ~ img:nth-of-type(17) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(17):checked ~ img:nth-of-type(17) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(18):checked ~ img:nth-of-type(18) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(19):checked ~ img:nth-of-type(19) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(20):checked ~ img:nth-of-type(20) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(21):checked ~ img:nth-of-type(21) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(22):checked ~ img:nth-of-type(22) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(23):checked ~ img:nth-of-type(23) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(24):checked ~ img:nth-of-type(24) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(25):checked ~ img:nth-of-type(25) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(26):checked ~ img:nth-of-type(26) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(27):checked ~ img:nth-of-type(27) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(28):checked ~ img:nth-of-type(28) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(29):checked ~ img:nth-of-type(29) {
+  opacity: 1;
+}
+form input[type=radio]:nth-of-type(30):checked ~ img:nth-of-type(30) {
+  opacity: 1;
+}
+    </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Seleccionar Imagen para predecir</h1>
+<form action="/apiCNN/predecir/" method="POST">
+    {% csrf_token %}        
+    <input type="radio" name="Imagen" value="1" id="_1" checked> 
+    <input type="radio" name="Imagen" value="2" id="_2">
+    <input type="radio" name="Imagen" value="3" id="_3">
+    <input type="radio" name="Imagen" value="4" id="_4">
+    <input type="radio" name="Imagen" value="5" id="_5">
+    <input type="radio" name="Imagen" value="6" id="_6">
+    <input type="radio" name="Imagen" value="7" id="_7">
+    <input type="radio" name="Imagen" value="8" id="_8">
+    <input type="radio" name="Imagen" value="9" id="_9">
+    <input type="radio" name="Imagen" value="10" id="_10">
+    <input type="radio" name="Imagen" value="11" id="_11">
+    <input type="radio" name="Imagen" value="12" id="_12">
+    <input type="radio" name="Imagen" value="13" id="_13">
+    <input type="radio" name="Imagen" value="14" id="_14">
+    <input type="radio" name="Imagen" value="15" id="_15">
+    <input type="radio" name="Imagen" value="16" id="_16">
+    <input type="radio" name="Imagen" value="17" id="_17">
+    <input type="radio" name="Imagen" value="18" id="_18">
+    <input type="radio" name="Imagen" value="19" id="_19">
+    <input type="radio" name="Imagen" value="20" id="_20">
+    <input type="radio" name="Imagen" value="21" id="_21">
+    <input type="radio" name="Imagen" value="22" id="_22">
+    <input type="radio" name="Imagen" value="23" id="_23">
+    <input type="radio" name="Imagen" value="24" id="_24">
+    <input type="radio" name="Imagen" value="25" id="_25">
+    <input type="radio" name="Imagen" value="26" id="_26">
+    <input type="radio" name="Imagen" value="27" id="_27">
+    <input type="radio" name="Imagen" value="28" id="_28">
+    <input type="radio" name="Imagen" value="29" id="_29">     
+    <br>
+    <input type="submit" value="PREDECIR">
+    <br>    
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain0.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain0.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain1.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain2.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain3.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/mountain4.jpg" width="260" height="300" alt="Galeria Montaña" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/buildings0.jpg" width="260" height="300" alt="Galeria Edificios" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/buildings1.jpg" width="260" height="300" alt="Galeria  Edificios" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/buildings2.jpg" width="260" height="300" alt="Galeria  Edificios" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/buildings3.jpg" width="260" height="300" alt="Galeria  Edificios" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/buildings4.jpg" width="260" height="300" alt="Galeria  Edificios" />    
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/forest0.jpg" width="260" height="300" alt="Galeria  Bosque"  />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/forest1.jpg" width="260" height="300" alt="Galeria  Bosque"  />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/forest2.jpg" width="260" height="300" alt="Galeria  Bosque"  />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/forest3.jpg" width="260" height="300" alt="Galeria  Bosque"  />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/forest4.jpg" width="260" height="300" alt="Galeria  Bosque"  />    
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/glacier0.jpg" width="260" height="300" alt="Galeria Glaciar" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/glacier1.jpg" width="260" height="300" alt="Galeria Glaciar" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/glacier2.jpg" width="260" height="300" alt="Galeria Glaciar" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/glacier3.jpg" width="260" height="300" alt="Galeria Glaciar" />
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/glacier4.jpg" width="260" height="300" alt="Galeria Glaciar" />        
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/sea0.jpg" width="260" height="300" alt="Galeria Oceano" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/sea1.jpg" width="260" height="300" alt="Galeria Oceano" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/sea2.jpg" width="260" height="300" alt="Galeria Oceano" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/sea3.jpg" width="260" height="300" alt="Galeria Oceano" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/sea4.jpg" width="260" height="300" alt="Galeria Oceano" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/street0.jpg" width="260" height="300" alt="Galeria Calles" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/street1.jpg" width="260" height="300" alt="Galeria Calles" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/street2.jpg" width="260" height="300" alt="Galeria Calles" />            
+    <img src="https://raw.githubusercontent.com/IvanUlloa098/Examen-AprendizajeDeMaquina/master/apiCNN/Logica/Imagenes/street3.jpg" width="260" height="300" alt="Galeria Calles" />            
+    
+    
+</form>
+</body>
+</html>
