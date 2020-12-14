@@ -73,6 +73,10 @@ class modeloCNN():
         print(label_names)
         print('Etiqueta predicción: ', label_names[index_sample_label])
         
+        print('Path de la imagen:')
+        print(image_path)
+        print(' ')
+
         dbReg.label = label_names[index_sample_label]
         dbReg.probability = maxElement
         dbReg.save()
